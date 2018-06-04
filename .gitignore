@@ -1,0 +1,7 @@
+.terraform
+*.backup
+.idea
+*.iml
+*.ipr
+*.iws
+*.tfstate
