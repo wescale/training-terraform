@@ -5,12 +5,12 @@ data "aws_vpc" "training" {
 }
 
 resource "aws_subnet" "public_subnet" {
-  vpc_id = "${data.aws_vpc.training.id}"
-  cidr_block = "${var.subnet_cidr}"
+  vpc_id            = "${data.aws_vpc.training.id}"
+  cidr_block        = "${var.subnet_cidr}"
   availability_zone = "eu-west-1a"
 
   tags {
-    Name = "training-${var.student}"
+    Name        = "training-${var.student}"
     Description = "subnet for terraform training"
   }
 }

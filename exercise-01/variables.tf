@@ -1,7 +1,7 @@
 variable "subnet_cidr" {
-  # default = "10.55.[0-254].0/24"
+  default = "10.55.14.0/24"
 }
 
 variable "student" {
-  # default = "<YOUR NAME>"
+  default = "aurelien"
 }
