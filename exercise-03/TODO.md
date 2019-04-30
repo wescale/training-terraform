@@ -20,4 +20,4 @@ Que constatez-vous ?
 Dans le répertoire de l'exercice 2 :
 
 * utiliser `terraform taint` et `apply` pour forcer la recréation des
-security group rules
+security group *rules*
