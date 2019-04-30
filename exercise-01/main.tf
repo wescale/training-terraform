@@ -14,3 +14,19 @@ resource "aws_subnet" "public_subnet" {
     Description = "subnet for terraform training"
   }
 }
+
+/**
+* Data source pour brnacher la route table dans le nouveau subnet
+*/
+data "aws_route_table" "default" {
+  vpc_id = "${data.aws_vpc.training.id}"
+  filter {
+    name = "tag:Name"
+    values = ["training-0"]
+  }
+}
+
+resource "aws_route_table_association" "public" {
+  route_table_id = "${data.aws_route_table.default.id}"
+  subnet_id      = "${aws_subnet.public_subnet.id}"
+}
