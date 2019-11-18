@@ -1,4 +1,4 @@
-# Exercice 1
+# Workflow
 
 * Définir les variables d'environnement nécessaires pour le provider aws. (source .envrc)
 * Initialiser la stack avec un `terraform init`

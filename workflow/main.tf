@@ -15,9 +15,6 @@ resource "aws_subnet" "public_subnet" {
   }
 }
 
-/**
-* Data source pour brnacher la route table dans le nouveau subnet
-*/
 data "aws_route_table" "default" {
   vpc_id = "${data.aws_vpc.training.id}"
   filter {
