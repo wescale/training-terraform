@@ -5,7 +5,7 @@ data "aws_vpc" "training" {
 resource "aws_security_group" "allow_all_1" {
   name_prefix        = "allow_all_1"
   description = "Allow all inbound traffic"
-  vpc_id      = "${data.aws_vpc.training.id}"
+  vpc_id      = data.aws_vpc.training.id
 
   tags = {
     Name = "allow_all_1"
@@ -20,7 +20,7 @@ resource "aws_security_group_rule" "allow_1_all_in" {
   protocol    = "all"
   cidr_blocks = ["0.0.0.0/0"]
 
-  security_group_id = "${aws_security_group.allow_all_1.id}"
+  security_group_id = aws_security_group.allow_all_1.id
 }
 
 resource "aws_security_group_rule" "allow_1_all_out" {
@@ -30,13 +30,13 @@ resource "aws_security_group_rule" "allow_1_all_out" {
   protocol    = "all"
   cidr_blocks = ["0.0.0.0/0"]
 
-  security_group_id = "${aws_security_group.allow_all_1.id}"
+  security_group_id = aws_security_group.allow_all_1.id
 }
 
 resource "aws_security_group" "allow_all_2" {
   name_prefix        = "allow_all_2"
   description = "Allow all inbound traffic"
-  vpc_id      = "${data.aws_vpc.training.id}"
+  vpc_id      = data.aws_vpc.training.id
 
   tags = {
     Name = "allow_all_2"
@@ -51,7 +51,7 @@ resource "aws_security_group_rule" "allow_all_2_in" {
   protocol    = "all"
   cidr_blocks = ["0.0.0.0/0"]
 
-  security_group_id = "${aws_security_group.allow_all_2.id}"
+  security_group_id = aws_security_group.allow_all_2.id
 }
 
 resource "aws_security_group_rule" "allow_all_2_out" {
@@ -61,5 +61,5 @@ resource "aws_security_group_rule" "allow_all_2_out" {
   protocol    = "all"
   cidr_blocks = ["0.0.0.0/0"]
 
-  security_group_id = "${aws_security_group.allow_all_2.id}"
+  security_group_id = aws_security_group.allow_all_2.id
 }

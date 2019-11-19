@@ -1,5 +1,5 @@
-variable "subnet_cidr" {
-  default = "10.55.14.0/24"
+variable "vpc_cidr" {
+  default = "10.60.0.0/16"
 }
 
 variable "student" {
