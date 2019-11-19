@@ -19,16 +19,16 @@ data "aws_ami" "debian" {
 
 resource "aws_key_pair" "keypair" {
   key_name_prefix = "training-"
-  public_key      = "${file(var.public_key_path)}"
+  public_key      = file(var.public_key_path)
 }
 
 resource "aws_security_group" "allow_all" {
   name_prefix = "tf-train"
 
   description = "Allow all inbound traffic"
-  vpc_id      = "${data.aws_vpc.training.id}"
+  vpc_id      = data.aws_vpc.training.id
 
   tags = {
-    Name = "${var.security_group_name}"
+    Name = var.security_group_name
   }
 }
