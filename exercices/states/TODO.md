@@ -1,23 +1,20 @@
-# Exercice 3
+# Exercice : States
 
-Utiliser `terraform show
-`
-## 3.1
+Utiliser `terraform show`
+
+## Move
 
 * Copier dans `main.tf` ici le code du security group de l'exercice 2.
-* lancer un plan
-* utiliser terraform mv pour déplacer la ressource 'aws_security_group.allow_all' du state de l'exercice 2 à un
-* fichier terraform.tfstate dans ce répertoire
-* refaire un terraform plan
+* Lancer `terraform plan`
+* Utiliser `terraform mv` pour déplacer la ressource `aws_security_group.allow_all` du state de l'exercice `hcl-1` à un fichier `terraform.tfstate` dans ce répertoire
+* Lancer `terraform plan`
 
-Que constatez-vous ?
+Que constatez-vous entre les 2 outputs de `terraform plan` ?
 
-* faire la manipulation inverse et rendre le security_group à son tfstate original.
+* Faire la manipulation inverse et rendre la ressource `aws_security_group.allow_all` à son state original.
 
+## Taint
 
-## 3.2
+Dans le répertoire de l'exercice `hcl-1` :
 
-Dans le répertoire de l'exercice 2 :
-
-* utiliser `terraform taint` et `apply` pour forcer la recréation des
-security group *rules*
+* Utiliser `terraform taint` et `terraform apply` pour forcer la recréation des ressources `aws_security_group_rule`
