@@ -6,7 +6,7 @@ resource "aws_vpc" "training" {
 
 
   tags {
-    Name = "training"
+    Name = "Terraform Training"
   }
 }
 

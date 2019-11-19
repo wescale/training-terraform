@@ -7,7 +7,7 @@ variable "instance_type" {
 variable "public_key_path" {
   type        = "string"
   description = "Public Key for SSH connexion"
-  default     = "../training.key.pub"
+  default     = "../../training.key.pub"
 }
 
 variable "security_group_name" {

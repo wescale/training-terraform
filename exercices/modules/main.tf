@@ -8,7 +8,7 @@ data "aws_vpc" "training" {
 #
 
 resource "aws_security_group" "allow_all_1" {
-  name        = "allow_all_1"
+  name_prefix        = "allow_all_1"
   description = "Allow all inbound traffic"
   vpc_id      = "${data.aws_vpc.training.id}"
 
@@ -39,7 +39,7 @@ resource "aws_security_group_rule" "allow_1_all_out" {
 }
 
 resource "aws_security_group" "allow_all_2" {
-  name        = "allow_all_2"
+  name_prefix        = "allow_all_2"
   description = "Allow all inbound traffic"
   vpc_id      = "${data.aws_vpc.training.id}"
 
