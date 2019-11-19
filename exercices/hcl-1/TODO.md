@@ -4,13 +4,11 @@
 
 * Écrire une ressource de type `aws_security_group_rule`, liée à la ressource `aws_security_group.allow_all`.
 Elle doit être de type `ingress` et autoriser tous les ports, tous les protocoles, et toutes les ip d'origine en entrée.
-Hints:
-* https://www.terraform.io/docs/providers/aws/r/security_group_rule.html
+  * Aide : https://www.terraform.io/docs/providers/aws/r/security_group_rule.html
 
 * Écrire une ressource de type `aws_security_group_rule`, liée à la ressource `aws_security_group.allow_all`.
 Elle doit être de type `egress` et autoriser tous les ports, tous les protocoles, et toutes les ip de destination.
-Hints:
-* https://www.terraform.io/docs/providers/aws/r/security_group_rule.html
+  * Aide : https://www.terraform.io/docs/providers/aws/r/security_group_rule.html
 
 
 * Créer une ressource de type `aws_instance` en vous appuyant sur les variables pré-définies dans `variables.tf`.
