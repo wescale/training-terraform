@@ -2,11 +2,6 @@ data "aws_vpc" "training" {
   cidr_block = "10.55.0.0/16"
 }
 
-#
-# TODO: Réduire cette duplication de code par la création d'un module
-# dans un sous-répertoire, appelé 2 fois.
-#
-
 resource "aws_security_group" "allow_all_1" {
   name_prefix        = "allow_all_1"
   description = "Allow all inbound traffic"
