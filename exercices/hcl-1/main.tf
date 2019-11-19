@@ -17,6 +17,15 @@ data "aws_ami" "debian" {
   owners = ["379101102735"] # Debian Project
 }
 
+data "aws_vpc" "training" {
+  cidr_block = "10.55.0.0/16"
+}
+
+data "aws_subnet" "training" {
+  vpc_id = data.aws_vpc.training.id
+  availability_zone = "eu-west-1a"
+}
+
 resource "aws_key_pair" "keypair" {
   key_name_prefix = "training-"
   public_key      = file(var.public_key_path)

@@ -13,7 +13,3 @@ variable "public_key_path" {
 variable "security_group_name" {
   default = "instance-training"
 }
-
-variable "subnet_id" {
-  type = "string"
-}
