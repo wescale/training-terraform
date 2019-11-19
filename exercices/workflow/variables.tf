@@ -3,5 +3,5 @@ variable "subnet_cidr" {
 }
 
 variable "student" {
-  default = "aurelien"
+  # default = "<YOUR_NAME>"
 }

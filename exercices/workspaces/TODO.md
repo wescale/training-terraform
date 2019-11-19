@@ -4,20 +4,16 @@
 
 * Lister les workspaces
 * Créez un workspace `dev`
-* apply
-* Créez un nouveau workspace `staging` et faire un 'apply' dedans.
-* Nettoyez votre workspace `dev` (terraform destroy)
-* Nettoyez votre workspace `staging` (terraform destroy)
+* Lancer un `terraform apply`
+* Créez un nouveau workspace `staging` et faire un `terraform apply` dedans.
+* Nettoyez votre workspace `dev` (avec `terraform destroy`)
+* Nettoyez votre workspace `staging` (avec `terraform destroy`)
 * Supprimez vos workspaces
 
 ## RAPPEL
 
-terraform workspace list
-
-terraform workspace show
-
-terraform workspace new foobar
-
-terraform workspace select foobar
-
-terraform workspace delete foobar
+* `terraform workspace list`
+* `terraform workspace show`
+* `terraform workspace new foobar`
+* `terraform workspace select foobar`
+* `terraform workspace delete foobar`
