@@ -2,6 +2,8 @@
 
 * Écrire une datasource de type `aws_vpc`, nommée `training` avec un filtre portant sur le cidr de la formation (10.55.0.0/16).
 
+* Écrire une datasource de type `aws_subnet`, nommée `training` avec un filtre portant sur l'attribut `id` de `data.aws_vpc.training`.
+
 * Écrire une ressource de type `aws_security_group_rule`, liée à la ressource `aws_security_group.allow_all`.
 Elle doit être de type `ingress` et autoriser tous les ports, tous les protocoles, et toutes les ip d'origine en entrée.
   * Aide : https://www.terraform.io/docs/providers/aws/r/security_group_rule.html
