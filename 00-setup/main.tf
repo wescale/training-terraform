@@ -4,7 +4,7 @@ resource "aws_vpc" "training" {
   cidr_block           = var.vpc_cidr
   enable_dns_hostnames = true
 
-  tags {
+  tags = {
     Name = "Terraform Training"
   }
 }
@@ -25,7 +25,7 @@ resource "aws_route_table" "default" {
     gateway_id = aws_internet_gateway.gateway.id
   }
 
-  tags {
+  tags = {
     Name = "training"
   }
 }
@@ -47,7 +47,7 @@ resource "aws_subnet" "public" {
 
   cidr_block = cidrsubnet(var.vpc_cidr, 8, count.index)
 
-  tags {
+  tags = {
     Name = "training-${count.index}"
   }
 }
