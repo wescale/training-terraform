@@ -1,16 +1,14 @@
 variable "id_by_region" {
-  type = "map"
-
-  default {
-    eu-west-1 = "123"
-    eu-west-2 = "456"
-    eu-west-3 = "789"
+  type = map(number)
+  default = {
+    eu-west-1 = 123
+    eu-west-2 = 456
+    eu-west-3 = 789
   }
 }
 
 variable "colors" {
-  type = "list"
-
+  type = list(string)
   default = [
     "blue",
     "green",
@@ -21,6 +19,11 @@ variable "colors" {
 }
 
 variable "raw_sizes" {
-  type    = "string"
+  type    = string
   default = "small,medium,large"
+}
+variable "allowed_ips" {
+  type = list(string)
+  default = ["82.242.176.98",
+    "109.190.180.109"]
 }

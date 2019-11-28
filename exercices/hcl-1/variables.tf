@@ -1,11 +1,11 @@
 variable "instance_type" {
-  type        = "string"
+  type        = string
   default     = "t2.micro"
   description = "EC2 instance type"
 }
 
 variable "public_key_path" {
-  type        = "string"
+  type        = string
   description = "Public Key for SSH connexion"
   default     = "../../training.key.pub"
 }
