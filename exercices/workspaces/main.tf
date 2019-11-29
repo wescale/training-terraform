@@ -9,7 +9,7 @@ resource "aws_security_group" "allow_all" {
 
   description = "Allow all inbound traffic"
 
-  vpc_id      = "${data.aws_vpc.training.id}"
+  vpc_id      = data.aws_vpc.training.id
 
   tags = {
     Name = "exercise-06"
