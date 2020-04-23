@@ -50,6 +50,7 @@ resource "aws_subnet" "public" {
   tags = {
     Name = "training-${count.index}"
   }
+  map_public_ip_on_launch = true
 }
 
 resource "aws_route_table_association" "public" {
