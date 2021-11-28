@@ -63,9 +63,9 @@ resource "aws_s3_bucket" "tfstates" {
   bucket = "training-tfstates"
 }
 
-#terraform {
-#  backend "s3" {
-#    bucket = "training-tfstates"
-#    key = "PUT_YOUR_NAME_HERE/terraform.tfstate"
-#  }
-#}
+terraform {
+  backend "s3" {
+    bucket = "training-tfstates"
+    key = "setup/terraform.tfstate"
+  }
+}

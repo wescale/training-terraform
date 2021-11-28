@@ -1,39 +1,9 @@
 # Exercice : Syntaxe HCL
 
-* Écrire une datasource de type `aws_vpc`, nommée `training` avec un filtre portant sur le cidr de la formation (10.55.0.0/16).
-
-* Écrire une datasource de type `aws_subnet`, nommée `training` avec
-  * un filtre `vpc_id` portant sur l'attribut `id` de `data.aws_vpc.training`.
-  * un filtre `availability_zone` sur `eu-west-1a`.
-
-* Écrire une ressource de type `aws_security_group_rule`, liée à la ressource `aws_security_group.allow_all`.
-Elle doit être de type `ingress` et autoriser tous les ports, tous les protocoles, et toutes les ip d'origine en entrée.
-  * Aide : https://www.terraform.io/docs/providers/aws/r/security_group_rule.html
-
-* Écrire une ressource de type `aws_security_group_rule`, liée à la ressource `aws_security_group.allow_all`.
-Elle doit être de type `egress` et autoriser tous les ports, tous les protocoles, et toutes les ip de destination.
-  * Aide : https://www.terraform.io/docs/providers/aws/r/security_group_rule.html
+* Écrire une datasource de type `gitlab_user`, nommée `trainee` avec un filtre portant sur le `username` que vous avez précédemment créé.
 
 
-* Créer une ressource de type `aws_instance` :
-  * Avec une adresse IP publique associée.
-  * L'attribut `instance_type` doit avoir la valeur de la variable `var.instance_type`
-  * L'attribut `ami` doit être l'id retourné par la datasource `data.aws_ami.debian`
-  * L'attribut `vpc_security_group_ids` doit être une liste contenant l'id de `aws_security_group.allow_all`.
-  * L'attribut `subnet_id` doit être l'id retourné par la datasource `data.aws_subnet.training`
-  * Le script de démarrage doit être le suivant :
+* Écrire une datasource de type `gitlab_group`, nommée `trainees` avec un filtre `id` portant sur l'attribut `grp_id` de `data.aws_vpc.training`.
 
-```
-  user_data = <<EOF
-#cloud-config
-runcmd:
-  - apt update
-  - apt install apache2 -y
-  - curl http://169.254.169.254/latest/meta-data/instance-id > /var/www/html/index.html
-  - service start apache2
-EOF
-```
+* Écrire une ressource de type `gitlab_group_membership` qui va ajouter l'utilisateur `trainee` dans le groupe `trainees` en lui donnant les droits `owner`
 
-* Créer un output nommé `ip` qui référence l'attribut `public_ip` de votre ressource `aws_instance`
-* Utiliser un browser pour aller à l'IP indiqué et visualiser votre identifiant d'instance.
-* Lancer un `terraform destroy`

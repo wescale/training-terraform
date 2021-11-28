@@ -1,18 +1,23 @@
-/**
- * Datasource pour connaitre l'id de la dernière Debian Stretch
- */
-data "aws_ami" "debian" {
-  most_recent = true
-
-  filter {
-    name   = "name"
-    values = ["debian-stretch-hvm-x86_64-gp2*"]
+data "terraform_remote_state" "gitlab_setup" {
+  backend = "local"
+  config = {
+    path = "../../gitlab_setup/terraform.tfstate"
   }
+}
 
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
+resource "gitlab_group" "trainees" {
+  name = random_pet.grp_name.id
+  path = random_pet.grp_name.id
+}
+resource "random_pet" "grp_name" {
+  length = 1
+}
+data "gitlab_user" "trainee" {
+  username = "lilian.deloche"
+}
 
-  owners = ["379101102735"] # Debian Project
+resource "gitlab_group_membership" "member_assoc" {
+  access_level = "owner"
+  group_id     = gitlab_group.trainees.id
+  user_id      = data.gitlab_user.trainee.id
 }

@@ -24,6 +24,5 @@ variable "raw_sizes" {
 }
 variable "allowed_ips" {
   type = list(string)
-  default = ["82.242.176.98",
-    "109.190.180.109"]
+  default = ["82.242.176.98"]
 }

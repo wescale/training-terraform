@@ -1,7 +1,11 @@
-variable "vpc_cidr" {
-  default = "10.60.0.0/16"
+variable "user" {
+  type = map(string)
+  default = {
+    mail="lilian.deloche@wescale.fr"
+    name="Lilian Deloche"
+  }
 }
 
-variable "student" {
-  # default = "<YOUR_NAME>"
+variable "gitlab_token" {
+  type = string
 }

@@ -1,7 +1,7 @@
 output "allow_all_1_id" {
-  value = "${aws_security_group.allow_all_1.id}"
+  value = module.sg_1.sg_id
 }
 
 output "allow_all_2_id" {
-  value = "${aws_security_group.allow_all_2.id}"
+  value = module.sg_2.sg_id
 }
