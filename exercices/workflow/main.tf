@@ -1,26 +1,24 @@
 terraform {
   required_providers {
-    gitlab = {
-      source = "gitlabhq/gitlab"
-      version = "3.8.0"
+    random = {
+      source  = "hashicorp/random"
+      version = "3.1.0"
     }
-    random = {    source = "hashicorp/random"
-      version = "3.1.0"}
   }
 }
-provider "gitlab" {
-  base_url = "http://127.0.0.1:8080"
-  token = var.gitlab_token
+provider "random" {}
+
+resource "random_pet" "people" {
+  count = var.population
+  length = 2
+  separator = " "
 }
 
-resource "gitlab_user" "student" {
-  email    = var.user.mail
-  name     = var.user.name
-  username = replace(var.user.mail,"/@.*/","")
-  password = random_password.user_password.result
+resource "random_pet" "pet" {
+  length = 1
+  count = var.population
 }
-
-resource "random_password" "user_password" {
-  length = 10
-  special = false
+resource "local_file" "population" {
+  filename = "../hcl-1/people.json"
+  content = jsonencode(random_pet.people.*.id)
 }

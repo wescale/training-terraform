@@ -1,11 +1,5 @@
-variable "user" {
-  type = map(string)
-  default = {
-    mail="lilian.deloche@wescale.fr"
-    name="Lilian Deloche"
-  }
-}
-
-variable "gitlab_token" {
-  type = string
+variable "population" {
+  type = number
+  default = 1
+  description = "Number of people to get"
 }

@@ -1,15 +1,27 @@
-data "aws_vpc" "training" {
-  cidr_block = "10.55.0.0/16"
+terraform {
+  required_providers {
+    tls = {
+      source = "hashicorp/tls"
+    }
+    local={
+      source = "hashicorp/local"
+    }
+  }
 }
 
-module "sg_1" {
-  source = "./module_sg"
-  vpc_id = data.aws_vpc.training.id
-  name = "allow_all_1"
+resource "tls_private_key" "key1" {
+  algorithm = "RSA"
+  rsa_bits = 4096
 }
-
-module "sg_2" {
-  source = "./module_sg"
-  vpc_id = data.aws_vpc.training.id
-  name = "allow_all_2"
+resource "local_file" "pk1" {
+  filename = "pk1.pem"
+  content = tls_private_key.key1.private_key_pem
+}
+resource "tls_private_key" "key2" {
+  algorithm = "RSA"
+  rsa_bits = 4096
+}
+resource "local_file" "pk2" {
+  filename = "pk2.pem"
+  content = tls_private_key.key2.private_key_pem
 }

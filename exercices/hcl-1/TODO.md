@@ -1,9 +1,9 @@
 # Exercice : Syntaxe HCL
 
-* Écrire une datasource de type `gitlab_user`, nommée `trainee` avec un filtre portant sur le `username` que vous avez précédemment créé.
+* Écrire une datasource de type `local_file`, nommée `population` qui va lire le fichier `people.json` présent dans le répertoire courant.
 
+* affichez le contenu de ce fichier encodé en base64
 
-* Écrire une datasource de type `gitlab_group`, nommée `trainees` avec un filtre `id` portant sur l'attribut `grp_id` de `data.aws_vpc.training`.
+* Écrire une resource de type `tls_private_key` de type `RSA` et de taille `4096` nommée key
 
-* Écrire une ressource de type `gitlab_group_membership` qui va ajouter l'utilisateur `trainee` dans le groupe `trainees` en lui donnant les droits `owner`
-
+* Affichez la clef publique au format PEM.

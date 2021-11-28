@@ -1,15 +1,10 @@
 terraform {
   required_providers {
-    gitlab = {
-      source = "gitlabhq/gitlab"
+    tls = {
+      source = "hashicorp/tls"
+    }
+    local ={
+      source = "hashicorp/local"
     }
   }
-}
-provider "gitlab" {
-  base_url = "http://127.0.0.1:8080"
-  token = var.gitlab_token
-}
-
-variable "gitlab_token" {
-  type = string
 }

@@ -1,4 +1,3 @@
-output "my_password" {
-  value = random_password.user_password.result
-  sensitive = true
+output "pets_by_owners" {
+  value =zipmap(random_pet.people.*.id,random_pet.pet.*.id)
 }
