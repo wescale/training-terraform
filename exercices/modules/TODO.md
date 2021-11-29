@@ -1,6 +1,6 @@
 # Exercice : Module
 
-Le fichier `main.tf` contient la définition de 2 ressources `gitlab_project` qui ont chacun 2 `gitlab_deploy_token` avec des attributs identiques à l'exception du scope.
+Le fichier `main.tf` contient la définition de 2 ressources `tls_private_key` qui ont chacun 1 `local_file` avec des attributs identiques à l'exception du scope.
 
 * Créer un module dans un sous-répertoire qui:
   * soit constitué de 3 fichiers : `main.tf`, `variables.tf`, `output.tf`
