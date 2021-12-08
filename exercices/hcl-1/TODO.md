@@ -1,6 +1,6 @@
 # Exercice : Syntaxe HCL
 
-* Écrire une datasource de type `local_file`, nommée `population` qui va lire le fichier `people.json` présent dans le répertoire courant.
+* Écrire une datasource de type `local_file`, nommée `population` qui va lire le fichier `people.json` présent dans le répertoire courant (le fichier est créé par l'exercice **workflow**).
 
 * affichez le contenu de ce fichier encodé en base64
 
