@@ -1,9 +1,9 @@
-# Exercice : Syntaxe HCL
+# HCL syntax
 
-* Écrire une datasource de type `local_file`, nommée `population` qui va lire le fichier `people.json` présent dans le répertoire courant (le fichier est créé par l'exercice **workflow**).
+* Write a `local_file` datasource, named `population` to read  `people.json` from the current working directory (comes from running the **workflow** exercise)
 
-* affichez le contenu de ce fichier encodé en base64
+* Output a base64 encoding of its content
 
-* Écrire une resource de type `tls_private_key` de type `RSA` et de taille `4096` nommée key
+* Write a `tls_private_key` resource with `RSA` type and a size of `4096`, name it `key`
 
-* Affichez la clef publique au format PEM.
+* Output the public key in PEM format.

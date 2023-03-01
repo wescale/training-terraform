@@ -1,12 +1,12 @@
-# Exercice : Module
+# Modules
 
-Le fichier `main.tf` contient la définition de 2 ressources `tls_private_key` qui ont chacun 1 `local_file` avec des attributs identiques à l'exception du scope.
+Our `main.tf` file contains 2 resources `tls_private_key` with their `local_file` having similar attributes.
 
-* Créer un module dans un sous-répertoire qui:
-  * soit constitué de 3 fichiers : `main.tf`, `variables.tf`, `output.tf`
-  * crée les ressources `tls_private_key` avec les mêmes attributs originaux que dans `main.tf`
-  * exporte l'attribut `public_key_fingerprint_md5` du `tls_private_key` via un output nommé `key_fingerprint`
+* Let's build a module in a subdirectory:
+  * 3 files: `main.tf`, `variables.tf`, `outputs.tf`
+  * `tls_private_key` resources with the same attributes
+  * outputs `public_key_fingerprint_md5` from the `tls_private_key` under the same `key_fingerprint`
 
-* Remplacer dans `main.tf` les ressources `tls_private_key` et `local_file` par 2 instanciations de ce nouveau module.
+* Change `main.tf` to have it call the module twice instead of the previous resources.
 
-* Modifier le `output.tf` original pour lui faire exporter les attributs `key_fingerprint` des instances de modules.
+* Write an `outputs.tf` to output `key_fingerprint` from the modules

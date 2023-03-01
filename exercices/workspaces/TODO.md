@@ -1,16 +1,14 @@
-# Exercise 6
+# Workspaces
 
-## Manipulation de workspaces
-
-* Lister les workspaces
-* Créez un workspace `dev`
-* Lancer un `terraform apply`
-* Créez un nouveau workspace `large` et faire un `terraform apply` dedans.
-* Que constatez-vous ?
-* Nettoyez votre workspace `dev` (avec `terraform destroy`)
-* Nettoyez votre workspace `large` (avec `terraform destroy`)
-* que constatez-vous au niveau du state ?
-* Supprimez vos workspaces
+* List all workspaces
+* Create a new `dev` workspace
+* Run a `terraform apply`
+* Create a new workspace `large` and run `terraform apply` in it.
+* What do you observe?
+* Cleanup your `dev` workspace (`terraform destroy`)
+* Cleanup your `large` workspace (`terraform destroy`)
+* What do you observe about the state ?
+* Cleanup all workspaces
 
 ## RAPPEL
 
