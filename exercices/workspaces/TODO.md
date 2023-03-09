@@ -10,7 +10,7 @@
 * What do you observe about the state ?
 * Cleanup all workspaces
 
-## RAPPEL
+## Reminder
 
 * `terraform workspace list`
 * `terraform workspace show`

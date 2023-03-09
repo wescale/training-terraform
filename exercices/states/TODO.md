@@ -1,10 +1,11 @@
 # States
 
-Run `terraform show`
+* Run `terraform apply`.
+
+* Run `terraform show`
 
 ## Move
 
-* Run `terraform apply`.
 * Change the resource name and run `terraform plan`
 * Write a `moved` block to have the state resource renamed and run `terraform apply`
 * Rename again the resource
