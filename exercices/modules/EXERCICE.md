@@ -1,5 +1,6 @@
-# Exercice : Modules
+# Modules
 
+## Premier module
 Le fichier `main.tf` contient la définition de 2 ressources `tls_private_key` qui ont chacun une `local_file` avec des attributs identiques.
 
 * Créer un module dans un sous-répertoire qui:
