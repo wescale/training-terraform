@@ -1,4 +1,4 @@
-# Exercise 6
+# Workspaces
 
 ## Manipulation de workspaces
 
