@@ -3,7 +3,7 @@
 * Lancer `terraform apply`
 * Utiliser `terraform show`
 
-## Move
+## Renommage
 
 * Renommer la ressource et lancer `terraform plan`
 * Ecrire un bloc `moved` pour renommer la ressource encore une fois et lancer `terraform apply`
